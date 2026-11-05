@@ -1,0 +1,25 @@
+.shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  /* Keep content clear of the fixed bottom bar (hidden from 768px). */
+  padding-block-end: calc(var(--bottom-nav-h) + var(--safe-bottom));
+}
+.main { flex: 1; }
+.main:focus { outline: none; }
+.skip {
+  position: absolute;
+  inset-inline-start: var(--space-4);
+  inset-block-start: -4rem;
+  z-index: calc(var(--z-toast) + 1);
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-md);
+  background: var(--color-primary);
+  color: var(--color-text-on-primary);
+  font-weight: var(--weight-bold);
+}
+.skip:focus { inset-block-start: var(--space-3); }
+
+@media (min-width: 768px) {
+  .shell { padding-block-end: 0; }
+}

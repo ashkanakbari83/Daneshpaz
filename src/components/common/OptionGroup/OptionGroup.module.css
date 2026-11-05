@@ -1,0 +1,13 @@
+.group { margin: 0; padding: 0; border: 0; min-width: 0; }
+.legend { padding: 0; margin-block-end: var(--space-2); font-weight: var(--weight-bold); }
+.options { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.pill {
+  min-height: 2.75rem;
+  padding-inline: var(--space-4);
+  border: 2px solid var(--color-border-strong);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+}
+.selected { background: var(--color-primary); border-color: var(--color-primary); color: var(--color-text-on-primary); font-weight: var(--weight-bold); }

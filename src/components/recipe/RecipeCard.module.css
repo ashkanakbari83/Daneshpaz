@@ -1,0 +1,17 @@
+.card {
+  position: relative;
+  height: 100%;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--dur) var(--ease), transform var(--dur) var(--ease);
+}
+.card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+.link { display: flex; flex-direction: column; gap: var(--space-3); height: 100%; padding: var(--space-3); }
+.body { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-2); padding-inline: var(--space-1); padding-block-end: var(--space-1); }
+.title { font-size: var(--text-lg); }
+.meta { display: flex; flex-direction: column; gap: 2px; font-size: var(--text-sm); color: var(--color-text-muted); }
+.meta li { display: flex; align-items: center; gap: var(--space-2); }
+.sample { font-size: var(--text-xs); }
+.fav { position: absolute; inset-block-start: var(--space-4); inset-inline-end: var(--space-4); }

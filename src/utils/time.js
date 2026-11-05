@@ -25,3 +25,15 @@ export function formatClock(totalSeconds) {
   const text = h > 0 ? `${h}:${pad(m)}:${pad(sec)}` : `${pad(m)}:${pad(sec)}`;
   return toPersianDigits(text);
 }
+
+/** ISO date (2026-11-01) -> Persian calendar text, e.g. «۱۰ آبان ۱۴۰۵». */
+export function formatDate(isoDate) {
+  const date = new Date(`${isoDate}T12:00:00Z`);
+  if (Number.isNaN(date.getTime())) return '';
+  return new Intl.DateTimeFormat('fa-IR-u-ca-persian', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    timeZone: 'UTC',
+  }).format(date);
+}

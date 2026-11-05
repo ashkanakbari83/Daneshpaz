@@ -1,2 +1,9 @@
 .form { display: flex; align-items: flex-start; gap: var(--space-3); }
 .field { flex: 1; min-width: 0; }
+.suggestions { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-block-start: var(--space-3); }
+.suggestion { min-height: 2.5rem; padding-inline: var(--space-4); border: 1px solid var(--color-border-strong); border-radius: var(--radius-pill); background: transparent; color: var(--color-primary); font-weight: var(--weight-medium); }
+.toolbar { display: flex; align-items: center; gap: var(--space-3); margin-block: var(--space-5) var(--space-3); }
+.sort { flex: 1; min-width: 0; }
+.results { margin-block-start: var(--space-4); }
+.count { margin-block-end: var(--space-3); color: var(--color-text-muted); font-size: var(--text-sm); }
+@media (min-width: 768px) { .sort { flex: none; width: 14rem; margin-inline-start: auto; } }

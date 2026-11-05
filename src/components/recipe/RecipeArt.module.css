@@ -1,0 +1,21 @@
+.art {
+  position: relative;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+.green { background: linear-gradient(135deg, var(--color-primary-soft), #cfe0d6); color: var(--color-primary); }
+.accent { background: linear-gradient(135deg, var(--color-accent-soft), #f6d3a6); color: var(--color-accent-text); }
+.terracotta { background: linear-gradient(135deg, var(--color-terracotta-soft), #f1c4b6); color: var(--color-danger); }
+.tag {
+  position: absolute;
+  inset-block-end: var(--space-2);
+  inset-inline-start: var(--space-2);
+  padding: 0 var(--space-2);
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.8);
+  color: var(--color-text-muted);
+  font-size: var(--text-xs);
+}

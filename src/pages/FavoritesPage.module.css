@@ -1,0 +1,2 @@
+.note { display: flex; gap: var(--space-2); margin-block-end: var(--space-5); font-size: var(--text-sm); color: var(--color-text-muted); }
+.note svg { flex: none; margin-block-start: 0.4rem; }

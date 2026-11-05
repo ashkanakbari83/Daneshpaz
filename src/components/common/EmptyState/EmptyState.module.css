@@ -1,0 +1,21 @@
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-10) var(--space-5);
+  text-align: center;
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.5rem;
+  height: 4.5rem;
+  margin-block-end: var(--space-2);
+  border-radius: var(--radius-pill);
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+}
+.title { font-size: var(--text-lg); }
+.description { max-width: 30rem; color: var(--color-text-muted); }

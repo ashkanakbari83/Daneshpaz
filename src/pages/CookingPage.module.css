@@ -1,0 +1,16 @@
+.screen {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  padding-block: var(--safe-top) var(--safe-bottom);
+}
+.bar { padding: var(--space-2) var(--gutter); border-block-end: 1px solid var(--color-border); }
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: var(--tap-min);
+  font-weight: var(--weight-bold);
+  color: var(--color-primary);
+}
+.main { flex: 1; display: grid; place-items: center; padding: var(--gutter); }

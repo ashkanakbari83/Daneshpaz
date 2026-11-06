@@ -1,16 +1,17 @@
-.screen {
+.screen { min-height: 100dvh; }
+.main {
   display: flex;
   flex-direction: column;
-  min-height: 100dvh;
-  padding-block: var(--safe-top) var(--safe-bottom);
+  gap: var(--space-5);
+  width: 100%;
+  max-width: 44rem;
+  margin-inline: auto;
+  padding: var(--space-5) var(--gutter) calc(10.5rem + var(--safe-bottom));
 }
-.bar { padding: var(--space-2) var(--gutter); border-block-end: 1px solid var(--color-border); }
-.back {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  min-height: var(--tap-min);
-  font-weight: var(--weight-bold);
-  color: var(--color-primary);
-}
-.main { flex: 1; display: grid; place-items: center; padding: var(--gutter); }
+.muted { color: var(--color-text-muted); }
+.sheetList { display: flex; flex-direction: column; gap: var(--space-4); }
+.sheetList li { display: flex; gap: var(--space-3); line-height: 1.9; }
+.sheetList svg { flex: none; margin-block-start: 0.4rem; color: var(--color-accent-text); }
+.sheetLinks { display: flex; flex-direction: column; gap: var(--space-2); margin-block-start: var(--space-3); }
+.sheetLink { display: flex; align-items: center; gap: var(--space-2); min-height: var(--tap-min); padding-inline: var(--space-4); border: 1px solid var(--color-border); border-radius: var(--radius-md); font-weight: var(--weight-medium); color: var(--color-primary); }
+.sheetLink:hover { background: var(--color-primary-soft); }

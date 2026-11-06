@@ -51,7 +51,14 @@ function RecipeContent({ recipe, ingredientsById, helpArticles }) {
             <div><dt><ChefHat size={16} aria-hidden="true" /> سطح</dt><dd><Badge tone={difficulty.tone}>{difficulty.label}</Badge></dd></div>
             <div><dt><Users size={16} aria-hidden="true" /> پیش‌فرض</dt><dd>{formatNumber(recipe.defaultServings)} نفر</dd></div>
           </dl>
-          <Button as={Link} to={`/cook/${recipe.slug}`} variant="accent" size="lg" fullWidth>شروع آشپزی</Button>
+          {recipe.steps.length > 0 ? (
+            <>
+              <Button as={Link} to={`/cook/${recipe.slug}?servings=${servings}`} variant="accent" size="lg" fullWidth>شروع آشپزی</Button>
+              <p className={styles.hint}>{formatNumber(recipe.steps.length)} مرحله، با تایمر و نشانه‌هایی که می‌گوید هر مرحله کی تمام شده.</p>
+            </>
+          ) : (
+            <Button variant="accent" size="lg" fullWidth disabled>مراحل این دستور هنوز آماده نیست</Button>
+          )}
         </div>
       </div>
 

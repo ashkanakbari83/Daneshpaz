@@ -19,3 +19,4 @@
 @media (min-width: 768px) {
   .top { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); align-items: start; gap: var(--space-8); }
 }
+.info > .hint { margin: 0; padding: 0; background: transparent; color: var(--color-text-muted); }

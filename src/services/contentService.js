@@ -1,6 +1,7 @@
 import { CATEGORIES } from '@/data/categories';
 import { INGREDIENTS } from '@/data/ingredients';
 import { RECIPES } from '@/data/recipes';
+import { STEPS_BY_SLUG } from '@/data/steps';
 import { HELP_ARTICLES, HELP_CATEGORIES } from '@/data/help';
 
 /**
@@ -15,7 +16,8 @@ export async function getCatalog() {
 }
 
 export async function getRecipeBundle(slug) {
-  const recipe = RECIPES.find((r) => r.slug === slug) ?? null;
+  const found = RECIPES.find((r) => r.slug === slug);
+  const recipe = found ? { ...found, steps: STEPS_BY_SLUG[found.slug] ?? [] } : null;
   return {
     recipe,
     ingredientsById,

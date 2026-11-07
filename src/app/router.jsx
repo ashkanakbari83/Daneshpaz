@@ -1,6 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 import AppShell from '@/components/layout/AppShell/AppShell';
 import AdminLayout from '@/admin/components/AdminLayout';
+import RequireAuth from '@/admin/auth/RequireAuth';
 import RouteError from './RouteError';
 
 /** Code-split every page: each route's chunk downloads only when first visited. */
@@ -34,7 +35,11 @@ export const router = createBrowserRouter([
   },
   {
     path: 'admin',
-    element: <AdminLayout />,
+    element: (
+      <RequireAuth>
+        <AdminLayout />
+      </RequireAuth>
+    ),
     errorElement: <RouteError />,
     children: [
       { index: true, lazy: page(() => import('@/admin/pages/AdminDashboardPage')) },

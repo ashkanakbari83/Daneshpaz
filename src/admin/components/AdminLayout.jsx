@@ -1,23 +1,26 @@
 import { Link, NavLink, Outlet, ScrollRestoration } from 'react-router-dom';
-import { ShieldAlert } from 'lucide-react';
+import { LogOut } from 'lucide-react';
 import Logo from '@/components/layout/Logo/Logo';
 import Badge from '@/components/common/Badge/Badge';
+import Button from '@/components/common/Button/Button';
+import { useAuth } from '@/admin/auth/AuthContext';
 import { ADMIN_NAV } from '@/constants/adminNav';
 import { cx } from '@/utils/classNames';
 import styles from './AdminLayout.module.css';
 
-/**
- * Admin shell. NOTE: route protection and authentication arrive with the
- * backend in Phase 4. Until then these pages are non-functional placeholders.
- */
+const ROLE_LABEL = { admin: 'مدیر کل', editor: 'ویراستار' };
+
+/** Admin shell. Rendered only for signed-in users (RequireAuth); the server re-checks every request. */
 export default function AdminLayout() {
+  const { user, logout } = useAuth();
   return (
     <div className={styles.layout}>
       <header className={styles.header}>
         <div className={cx('container', styles.top)}>
           <Logo to="/admin" />
-          <Badge tone="accent">پنل مدیریت</Badge>
-          <Link to="/" className={styles.siteLink}>مشاهده‌ی سایت</Link>
+          <Badge tone="accent">{ROLE_LABEL[user?.role] ?? 'پنل مدیریت'}</Badge>
+          <Link to="/" className={styles.siteLink} aria-label="مشاهده‌ی سایت">سایت</Link>
+          <Button size="sm" variant="ghost" iconStart={<LogOut size={16} aria-hidden="true" />} onClick={logout} aria-label={`خروج (${user?.email ?? ''})`}>خروج</Button>
         </div>
         <nav className={styles.navWrap} aria-label="بخش‌های مدیریت">
           <ul className={cx('container', styles.nav)}>
@@ -32,13 +35,6 @@ export default function AdminLayout() {
           </ul>
         </nav>
       </header>
-
-      <div className="container">
-        <p className={styles.notice} role="note">
-          <ShieldAlert size={20} aria-hidden="true" />
-          <span>ورود مدیر هنوز فعال نیست؛ صفحه‌های این بخش فقط نمای اولیه‌اند و داده‌ای را تغییر نمی‌دهند.</span>
-        </p>
-      </div>
 
       <main id="main" className={styles.main}>
         <Outlet />

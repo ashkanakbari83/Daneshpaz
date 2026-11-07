@@ -74,7 +74,7 @@ export default function HelpArticlePage() {
             <section aria-labelledby="refs">
               <h2 id="refs" className={styles.h2}>منابع</h2>
               <ul className={styles.links}>
-                {article.references.map((ref) => (
+                {article.references.filter((ref) => /^https?:\/\//i.test(ref.url)).map((ref) => (
                   <li key={ref.url}>
                     <a href={ref.url} target="_blank" rel="noopener noreferrer" className={styles.link}>
                       {ref.title} <ExternalLink size={16} aria-hidden="true" />

@@ -1,0 +1,333 @@
+{
+  "communities": {
+    "0": [
+      "package",
+      "package_dependencies",
+      "package_dependencies_fontsource_variable_vazirmatn",
+      "package_dependencies_lucide_react",
+      "package_dependencies_react",
+      "package_dependencies_react_dom",
+      "package_dependencies_react_router_dom",
+      "package_devdependencies",
+      "package_devdependencies_oxlint",
+      "package_devdependencies_types_react",
+      "package_devdependencies_types_react_dom",
+      "package_devdependencies_vite",
+      "package_devdependencies_vitejs_plugin_react",
+      "package_devdependencies_vitest",
+      "package_name",
+      "package_private",
+      "package_scripts",
+      "package_scripts_build",
+      "package_scripts_dev",
+      "package_scripts_lint",
+      "package_scripts_preview",
+      "package_type",
+      "package_version",
+      "ref_fontsource_variable_vazirmatn",
+      "ref_node_url",
+      "ref_oxlint",
+      "ref_react_dom",
+      "ref_types_react",
+      "ref_types_react_dom",
+      "ref_vite",
+      "ref_vitejs_plugin_react",
+      "ref_vitest",
+      "src_main",
+      "src_styles_base",
+      "src_styles_tokens",
+      "vite_config"
+    ],
+    "1": [
+      "ref_lucide_react",
+      "src_admin_pages_admincategoriespage",
+      "src_admin_pages_admincategoriespage_admincategoriespage",
+      "src_admin_pages_adminingredientspage",
+      "src_admin_pages_adminingredientspage_adminingredientspage",
+      "src_admin_pages_adminloginpage",
+      "src_admin_pages_adminloginpage_adminloginpage",
+      "src_admin_pages_adminmediapage",
+      "src_admin_pages_adminmediapage_adminmediapage",
+      "src_admin_pages_adminpricespage",
+      "src_admin_pages_adminpricespage_adminpricespage",
+      "src_admin_pages_adminquestionspage",
+      "src_admin_pages_adminquestionspage_adminquestionspage",
+      "src_admin_pages_adminrecipeformpage",
+      "src_admin_pages_adminrecipeformpage_adminrecipeformpage",
+      "src_admin_pages_adminrecipespage",
+      "src_admin_pages_adminrecipespage_adminrecipespage",
+      "src_app_router",
+      "src_app_router_page",
+      "src_app_router_router",
+      "src_components_layout_placeholderpage",
+      "src_components_layout_placeholderpage_placeholderpage",
+      "src_pages_favoritespage",
+      "src_pages_favoritespage_favoritespage",
+      "src_pages_helparticlepage",
+      "src_pages_helparticlepage_helparticlepage",
+      "src_pages_helppage",
+      "src_pages_helppage_helppage",
+      "src_pages_recipepage",
+      "src_pages_recipepage_recipepage"
+    ],
+    "2": [
+      "ref_react",
+      "src_app_routeerror",
+      "src_app_routeerror_routeerror",
+      "src_components_common_button_button",
+      "src_components_common_button_button_button",
+      "src_components_common_button_button_module",
+      "src_components_common_emptystate_emptystate",
+      "src_components_common_emptystate_emptystate_emptystate",
+      "src_components_common_emptystate_emptystate_module",
+      "src_components_common_errorstate_errorstate",
+      "src_components_common_errorstate_errorstate_errorstate",
+      "src_components_common_errorstate_errorstate_module",
+      "src_components_common_input_input",
+      "src_components_common_input_input_input",
+      "src_components_common_input_input_module",
+      "src_hooks_usepagetitle",
+      "src_hooks_usepagetitle_usepagetitle",
+      "src_pages_cookingpage",
+      "src_pages_cookingpage_cookingpage",
+      "src_pages_cookingpage_module",
+      "src_pages_homepage",
+      "src_pages_homepage_homepage",
+      "src_pages_homepage_module",
+      "src_pages_homepage_quick_access",
+      "src_pages_notfoundpage",
+      "src_pages_notfoundpage_notfoundpage",
+      "src_pages_searchpage",
+      "src_pages_searchpage_module",
+      "src_pages_searchpage_quick_labels",
+      "src_pages_searchpage_searchpage"
+    ],
+    "3": [
+      "src_admin_components_adminlayout",
+      "src_admin_components_adminlayout_adminlayout",
+      "src_admin_components_adminlayout_module",
+      "src_admin_pages_admindashboardpage",
+      "src_admin_pages_admindashboardpage_admindashboardpage",
+      "src_admin_pages_admindashboardpage_module",
+      "src_app_app_app",
+      "src_app_app_jsx_src_app_app",
+      "src_components_common_badge_badge",
+      "src_components_common_badge_badge_badge",
+      "src_components_common_badge_badge_module",
+      "src_components_common_card_card",
+      "src_components_common_card_card_card",
+      "src_components_common_card_card_module",
+      "src_components_common_skeleton_skeleton",
+      "src_components_common_skeleton_skeleton_module",
+      "src_components_common_skeleton_skeleton_skeleton",
+      "src_components_common_toast_toast",
+      "src_components_common_toast_toast_icons",
+      "src_components_common_toast_toast_module",
+      "src_components_common_toast_toast_toastcontext",
+      "src_components_common_toast_toast_toastprovider",
+      "src_components_layout_pageloader",
+      "src_components_layout_pageloader_pageloader",
+      "src_constants_adminnav",
+      "src_constants_adminnav_admin_nav",
+      "src_utils_classnames",
+      "src_utils_classnames_cx"
+    ],
+    "4": [
+      "src_components_common_index",
+      "src_components_common_toast_toast_usetoast",
+      "src_pages_designsystempage",
+      "src_pages_designsystempage_colors",
+      "src_pages_designsystempage_designsystempage",
+      "src_pages_designsystempage_module",
+      "src_pages_designsystempage_section",
+      "src_utils_currency",
+      "src_utils_currency_compact_steps",
+      "src_utils_currency_currency_labels",
+      "src_utils_currency_formatcurrency",
+      "src_utils_currency_formatcurrencycompact",
+      "src_utils_index",
+      "src_utils_persian",
+      "src_utils_persian_formatnumber",
+      "src_utils_persian_toenglishdigits",
+      "src_utils_persian_topersiandigits",
+      "src_utils_time",
+      "src_utils_time_formatclock",
+      "src_utils_time_formatduration",
+      "src_utils_time_pad",
+      "src_utils_units",
+      "src_utils_units_formatingredientamount",
+      "src_utils_units_formatquantity",
+      "src_utils_units_formatunit",
+      "src_utils_units_fractions",
+      "src_utils_units_unit_labels",
+      "src_utils_utils_test"
+    ],
+    "5": [
+      "ref_react_router_dom",
+      "src_components_common_bottomsheet_bottomsheet",
+      "src_components_common_bottomsheet_bottomsheet_bottomsheet",
+      "src_components_common_bottomsheet_bottomsheet_module",
+      "src_components_layout_appshell_appshell",
+      "src_components_layout_appshell_appshell_appshell",
+      "src_components_layout_appshell_appshell_module",
+      "src_components_layout_bottomnav_bottomnav",
+      "src_components_layout_bottomnav_bottomnav_bottomnav",
+      "src_components_layout_bottomnav_bottomnav_module",
+      "src_components_layout_footer_footer",
+      "src_components_layout_footer_footer_footer",
+      "src_components_layout_footer_footer_module",
+      "src_components_layout_header_header",
+      "src_components_layout_header_header_header",
+      "src_components_layout_header_header_module",
+      "src_components_layout_logo_logo",
+      "src_components_layout_logo_logo_logo",
+      "src_components_layout_logo_logo_logomark",
+      "src_components_layout_logo_logo_module",
+      "src_constants_navigation",
+      "src_constants_navigation_primary_nav"
+    ],
+    "6": [
+      "oxlintrc",
+      "oxlintrc_plugins",
+      "oxlintrc_rules",
+      "oxlintrc_rules_react_only_export_components",
+      "oxlintrc_rules_react_rules_of_hooks",
+      "oxlintrc_schema"
+    ],
+    "7": [
+      "src_app",
+      "src_app_jsx_src_app_app",
+      "src_assets_hero",
+      "src_assets_react",
+      "src_assets_vite"
+    ],
+    "8": [
+      "src_constants_breakpoints",
+      "src_constants_breakpoints_breakpoints"
+    ]
+  },
+  "cohesion": {
+    "0": 0.07142857142857142,
+    "1": 0.20229885057471264,
+    "2": 0.1632183908045977,
+    "3": 0.13756613756613756,
+    "4": 0.18253968253968253,
+    "5": 0.18181818181818182,
+    "6": 0.3333333333333333,
+    "7": 0.4,
+    "8": 1.0
+  },
+  "gods": [
+    {
+      "id": "ref_lucide_react",
+      "label": "lucide-react",
+      "degree": 30
+    },
+    {
+      "id": "src_components_layout_placeholderpage_placeholderpage",
+      "label": "PlaceholderPage()",
+      "degree": 27
+    },
+    {
+      "id": "src_components_common_button_button_button",
+      "label": "Button",
+      "degree": 22
+    },
+    {
+      "id": "ref_react_router_dom",
+      "label": "react-router-dom",
+      "degree": 20
+    },
+    {
+      "id": "src_app_router_router",
+      "label": "router",
+      "degree": 20
+    },
+    {
+      "id": "src_utils_classnames_cx",
+      "label": "cx()",
+      "degree": 20
+    },
+    {
+      "id": "src_pages_designsystempage_designsystempage",
+      "label": "DesignSystemPage()",
+      "degree": 18
+    },
+    {
+      "id": "src_hooks_usepagetitle_usepagetitle",
+      "label": "usePageTitle()",
+      "degree": 15
+    },
+    {
+      "id": "src_components_common_emptystate_emptystate_emptystate",
+      "label": "EmptyState()",
+      "degree": 13
+    },
+    {
+      "id": "ref_react",
+      "label": "react",
+      "degree": 12
+    }
+  ],
+  "surprises": [
+    {
+      "source": "AdminLayout()",
+      "target": "Logo()",
+      "source_files": [
+        "src/admin/components/AdminLayout.jsx",
+        "src/components/layout/Logo/Logo.jsx"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "bridges separate communities"
+    },
+    {
+      "source": "AdminCategoriesPage()",
+      "target": "PlaceholderPage()",
+      "source_files": [
+        "src/admin/pages/AdminCategoriesPage.jsx",
+        "src/components/layout/PlaceholderPage.jsx"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "peripheral node `AdminCategoriesPage()` unexpectedly reaches hub `PlaceholderPage()`"
+    },
+    {
+      "source": "AdminDashboardPage()",
+      "target": "usePageTitle()",
+      "source_files": [
+        "src/admin/pages/AdminDashboardPage.jsx",
+        "src/hooks/usePageTitle.js"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "bridges separate communities"
+    },
+    {
+      "source": "AdminIngredientsPage()",
+      "target": "PlaceholderPage()",
+      "source_files": [
+        "src/admin/pages/AdminIngredientsPage.jsx",
+        "src/components/layout/PlaceholderPage.jsx"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "peripheral node `AdminIngredientsPage()` unexpectedly reaches hub `PlaceholderPage()`"
+    },
+    {
+      "source": "AdminLoginPage()",
+      "target": "PlaceholderPage()",
+      "source_files": [
+        "src/admin/pages/AdminLoginPage.jsx",
+        "src/components/layout/PlaceholderPage.jsx"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "peripheral node `AdminLoginPage()` unexpectedly reaches hub `PlaceholderPage()`"
+    }
+  ],
+  "tokens": {
+    "input": 0,
+    "output": 0
+  }
+}

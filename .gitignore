@@ -9,6 +9,6 @@ dist
 coverage
 
 # local database and secrets
-data/
+/data/
 *.sqlite
 *.sqlite-*

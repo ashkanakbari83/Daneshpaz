@@ -92,7 +92,7 @@ export default function SearchPage() {
       )}
 
       <div className={styles.toolbar}>
-        <Button variant="secondary" iconStart={<SlidersHorizontal size={18} aria-hidden="true" />} onClick={() => setSheetOpen(true)}>
+        <Button variant="secondary" size="sm" iconStart={<SlidersHorizontal size={16} aria-hidden="true" />} onClick={() => setSheetOpen(true)}>
           فیلترها {activeCount > 0 && <Badge tone="primary">{formatNumber(activeCount)}</Badge>}
         </Button>
         <Select

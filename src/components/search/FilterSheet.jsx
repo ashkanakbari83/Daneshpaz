@@ -35,8 +35,11 @@ export default function FilterSheet({ open, onClose, filters, onApply, ingredien
       }
     >
       <div className={styles.stack}>
-        <OptionGroup legend="مواد موجود در خانه" multiple value={draft.have} onChange={set('have')}
-          options={ingredients.map((i) => ({ value: i.id, label: i.name }))} />
+        <div>
+          <OptionGroup legend="مواد موجود در خانه" multiple value={draft.have} onChange={set('have')}
+            options={ingredients.map((i) => ({ value: i.id, label: i.name }))} />
+          <p className={styles.hint}>نمک، روغن و ادویه‌های پایه (فلفل، زردچوبه) و شکر همیشه موجود حساب می‌شوند.</p>
+        </div>
         <OptionGroup legend="نوع وعده" multiple value={draft.meal} onChange={set('meal')} options={toOptions(MEAL_TYPES)} />
         <OptionGroup legend="سطح سختی" multiple value={draft.diff} onChange={set('diff')} options={toOptions(DIFFICULTY, (d) => d.label)} />
         <OptionGroup legend="هزینه‌ی تقریبی (قیمت نمونه)" value={draft.cost} onChange={set('cost')} options={COST_OPTIONS} />

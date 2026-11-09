@@ -22,7 +22,7 @@ export default function HelpArticlePage() {
     <div className="container page">
       <Link to="/help" className={styles.back}>
         {/* In RTL, "back" points right. */}
-        <ArrowRight size={20} aria-hidden="true" /> همه‌ی راهنماها
+        <ArrowRight size={18} aria-hidden="true" /> همه‌ی راهنماها
       </Link>
 
       {result.status === 'loading' && <Skeleton height="16rem" />}
@@ -54,7 +54,7 @@ export default function HelpArticlePage() {
 
           {article.safety.length > 0 && (
             <section className={styles.safety} aria-labelledby="safety">
-              <h2 id="safety" className={styles.safetyTitle}><AlertTriangle size={22} aria-hidden="true" /> نکته‌ی ایمنی</h2>
+              <h2 id="safety" className={styles.safetyTitle}><AlertTriangle size={18} aria-hidden="true" /> نکته‌ی ایمنی</h2>
               <ul className={styles.bullets}>{article.safety.map((s) => <li key={s}>{s}</li>)}</ul>
             </section>
           )}

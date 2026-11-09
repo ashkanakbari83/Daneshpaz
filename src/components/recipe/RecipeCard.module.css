@@ -5,13 +5,23 @@
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
-  transition: box-shadow var(--dur) var(--ease), transform var(--dur) var(--ease);
+  transition: box-shadow var(--dur) var(--ease), border-color var(--dur) var(--ease);
 }
-.card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
-.link { display: flex; flex-direction: column; gap: var(--space-3); height: 100%; padding: var(--space-3); }
-.body { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-2); padding-inline: var(--space-1); padding-block-end: var(--space-1); }
-.title { font-size: var(--text-lg); }
-.meta { display: flex; flex-direction: column; gap: 2px; font-size: var(--text-sm); color: var(--color-text-muted); }
-.meta li { display: flex; align-items: center; gap: var(--space-2); }
-.sample { font-size: var(--text-xs); }
-.fav { position: absolute; inset-block-start: var(--space-4); inset-inline-end: var(--space-4); }
+.card:hover { box-shadow: var(--shadow-md); border-color: var(--color-border-strong); }
+.link { display: grid; grid-template-columns: 5rem minmax(0, 1fr); gap: var(--space-3); align-items: start; height: 100%; padding: var(--space-2); }
+.art { width: 5rem; height: 5rem; aspect-ratio: auto; align-self: start; }
+.body { display: flex; flex-direction: column; gap: var(--space-1); min-width: 0; padding-inline-end: 2.25rem; }
+.title { font-size: var(--text-base); font-weight: var(--weight-bold); line-height: 1.5; }
+.tags { display: flex; align-items: center; gap: var(--space-2); margin: 0; font-size: var(--text-xs); color: var(--color-text-muted); }
+.meta { display: flex; flex-direction: column; gap: 1px; font-size: var(--text-xs); color: var(--color-text-muted); line-height: 1.6; }
+.meta li { display: flex; align-items: flex-start; gap: var(--space-1); }
+.meta svg { flex: none; margin-block-start: 0.2rem; }
+.sample { margin-inline-start: var(--space-1); opacity: 0.85; }
+.fav { position: absolute; inset-block-start: var(--space-1); inset-inline-end: var(--space-1); background: transparent; box-shadow: none; }
+
+@media (min-width: 600px) {
+  .link { display: flex; flex-direction: column; align-items: stretch; gap: var(--space-2); padding: var(--space-2); }
+  .art { width: 100%; height: auto; aspect-ratio: 16 / 10; align-self: auto; }
+  .body { padding: var(--space-1) var(--space-1) var(--space-1); }
+  .fav { inset-block-start: var(--space-3); inset-inline-end: var(--space-3); background: rgba(255, 255, 255, 0.92); box-shadow: var(--shadow-sm); }
+}

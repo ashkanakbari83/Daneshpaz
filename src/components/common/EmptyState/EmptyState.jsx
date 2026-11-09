@@ -6,7 +6,7 @@ export default function EmptyState({ icon: Icon = Inbox, title, description, act
   return (
     <div className={styles.empty}>
       <span className={styles.badge} aria-hidden="true">
-        <Icon size={32} />
+        <Icon size={26} />
       </span>
       <h2 className={styles.title}>{title}</h2>
       {description && <p className={styles.description}>{description}</p>}

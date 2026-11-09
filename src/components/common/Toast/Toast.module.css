@@ -16,9 +16,9 @@
   gap: var(--space-3);
   width: 100%;
   max-width: 26rem;
-  padding: var(--space-3) var(--space-3) var(--space-3) var(--space-4);
-  padding-inline-start: var(--space-4);
-  padding-inline-end: var(--space-2);
+  padding: var(--space-2) var(--space-2) var(--space-2) var(--space-3);
+  padding-inline-start: var(--space-3);
+  padding-inline-end: var(--space-1);
   border-radius: var(--radius-md);
   background: var(--color-primary-strong);
   color: var(--color-text-on-primary);
@@ -29,13 +29,13 @@
 .success .icon { color: #8fd3a8; }
 .error { background: var(--color-danger); color: #fff; }
 .info .icon { color: var(--color-accent); }
-.message { flex: 1; font-size: var(--text-sm); line-height: 1.7; }
+.message { flex: 1; font-size: var(--text-sm); line-height: 1.6; }
 .close {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: var(--control-h-sm);
+  height: var(--control-h-sm);
   border: 0;
   border-radius: var(--radius-pill);
   background: transparent;

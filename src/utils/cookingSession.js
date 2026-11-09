@@ -116,3 +116,30 @@ export function findExpired(session, now) {
 }
 
 export const hasRunningTimers = (session) => Object.values(session.timers).some((t) => t.status === 'running');
+
+/** A session untouched for this long is treated as abandoned (cooking sessions are short). */
+export const SESSION_FRESH_MS = 12 * 3_600_000;
+
+export const isStale = (session, now = Date.now()) => !session || now - (session.updatedAt || 0) > SESSION_FRESH_MS;
+
+/**
+ * Cheap summary of a *raw* saved session for «ادامه‌ی آشپزی» cards, or null when
+ * there is nothing to resume (nothing done yet, finished, stale or malformed).
+ */
+export function summarizeSession(raw, now = Date.now()) {
+  if (!raw || typeof raw !== 'object' || typeof raw.slug !== 'string') return null;
+  if (raw.finished === true) return null;
+  const stepIndex = Number.isInteger(raw.stepIndex) && raw.stepIndex >= 0 ? raw.stepIndex : 0;
+  const completed = Array.isArray(raw.completed) ? raw.completed.length : 0;
+  const timers = raw.timers && typeof raw.timers === 'object' ? Object.keys(raw.timers).length : 0;
+  const updatedAt = isNum(raw.updatedAt) ? raw.updatedAt : 0;
+  if (stepIndex === 0 && completed === 0 && timers === 0) return null;
+  if (now - updatedAt > SESSION_FRESH_MS) return null;
+  return { slug: raw.slug, stepIndex, completed, updatedAt };
+}
+
+/** 'none' | 'in-progress' | 'finished' for a normalized session. */
+export function progressStatus(session, now = Date.now()) {
+  if (!session || isStale(session, now) || !hasProgress(session)) return 'none';
+  return session.finished ? 'finished' : 'in-progress';
+}

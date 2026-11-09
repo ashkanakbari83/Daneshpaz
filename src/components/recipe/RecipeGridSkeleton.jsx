@@ -6,7 +6,7 @@ export default function RecipeGridSkeleton({ count = 4 }) {
     <ul className={styles.grid} role="status" aria-label="در حال بارگذاری">
       {Array.from({ length: count }, (_, i) => (
         <li key={i}>
-          <Skeleton height="15rem" />
+          <Skeleton height="6.25rem" />
         </li>
       ))}
     </ul>

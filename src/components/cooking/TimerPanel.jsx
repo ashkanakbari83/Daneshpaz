@@ -24,21 +24,21 @@ export default function TimerPanel({ step, timer, now, dispatch }) {
 
       <div className={styles.actions}>
         {t.status === 'idle' && (
-          <Button size="lg" fullWidth iconStart={<Play size={20} aria-hidden="true" />} onClick={() => { prepareAudio(); send('start'); }}>شروع تایمر</Button>
+          <Button size="lg" fullWidth iconStart={<Play size={18} aria-hidden="true" />} onClick={() => { prepareAudio(); send('start'); }}>شروع تایمر</Button>
         )}
         {t.status === 'running' && (
-          <Button size="lg" fullWidth variant="secondary" iconStart={<Pause size={20} aria-hidden="true" />} onClick={() => send('pause')}>توقف تایمر</Button>
+          <Button size="lg" fullWidth variant="secondary" iconStart={<Pause size={18} aria-hidden="true" />} onClick={() => send('pause')}>توقف تایمر</Button>
         )}
         {t.status === 'paused' && (
-          <Button size="lg" fullWidth iconStart={<Play size={20} aria-hidden="true" />} onClick={() => { prepareAudio(); send('resume'); }}>ادامه‌ی تایمر</Button>
+          <Button size="lg" fullWidth iconStart={<Play size={18} aria-hidden="true" />} onClick={() => { prepareAudio(); send('resume'); }}>ادامه‌ی تایمر</Button>
         )}
         {t.status === 'done' && (
-          <Button size="lg" fullWidth iconStart={<Play size={20} aria-hidden="true" />} onClick={() => { prepareAudio(); send('start'); }}>شروع دوباره</Button>
+          <Button size="lg" fullWidth iconStart={<Play size={18} aria-hidden="true" />} onClick={() => { prepareAudio(); send('start'); }}>شروع دوباره</Button>
         )}
         <div className={styles.secondary}>
-          <Button variant="ghost" iconStart={<Plus size={18} aria-hidden="true" />} onClick={() => send('add', { ms: 60_000 })}>۱ دقیقه بیشتر</Button>
+          <Button variant="ghost" size="sm" iconStart={<Plus size={16} aria-hidden="true" />} onClick={() => send('add', { ms: 60_000 })}>۱ دقیقه بیشتر</Button>
           {t.status !== 'idle' && (
-            <Button variant="ghost" iconStart={<RotateCcw size={18} aria-hidden="true" />} onClick={() => send('reset')}>از اول</Button>
+            <Button variant="ghost" size="sm" iconStart={<RotateCcw size={16} aria-hidden="true" />} onClick={() => send('reset')}>از اول</Button>
           )}
         </div>
       </div>

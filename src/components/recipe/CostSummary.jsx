@@ -21,7 +21,7 @@ export default function CostSummary({ cost, servings }) {
         </div>
       </div>
       <p className={styles.note}>
-        <Info size={18} aria-hidden="true" />
+        <Info size={16} aria-hidden="true" />
         <span>
           <Badge tone="accent">{PRICE_STATUS[cost.priceStatus]}</Badge>{' '}
           قیمت‌ها فقط نمونه‌اند و قیمت واقعی بازار نیستند.

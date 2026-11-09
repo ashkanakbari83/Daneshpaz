@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { normalizeText, tokenize, searchRecipes } from './search.js';
 import { parseFilters, serializeFilters, removeFilter, DEFAULT_FILTERS } from './filters.js';
 
-const ingredientsById = { eggs: { name: 'تخم‌مرغ' }, rice: { name: 'برنج' }, tomato: { name: 'گوجه‌فرنگی' } };
+const ingredientsById = { eggs: { name: 'تخم‌مرغ' }, rice: { name: 'برنج' }, tomato: { name: 'گوجه‌فرنگی' }, salt: { name: 'نمک' }, oil: { name: 'روغن' } };
 const categoriesBySlug = { quick: { title: 'غذاهای فوری' }, iranian: { title: 'غذاهای ایرانی' } };
 const ctx = { ingredientsById, categoriesBySlug };
 const mk = (over) => ({
@@ -47,6 +47,16 @@ describe('searchRecipes', () => {
   it('ranks by ingredients on hand and drops poor matches', () => {
     expect(run({ have: ['rice'] })).toEqual(['کته']);
     expect(run({ have: ['eggs', 'tomato'] })).toEqual(['املت گوجه']);
+  });
+  it('assumes pantry staples (salt, oil...) are at home when matching ingredients', () => {
+    const withStaples = mk({ title: 'املت کامل', ingredients: [
+      { ingredientId: 'eggs', optional: false }, { ingredientId: 'tomato', optional: false },
+      { ingredientId: 'oil', optional: false }, { ingredientId: 'salt', optional: false }] });
+    const pick = (have) => searchRecipes({ recipes: [withStaples, rice], ctx, costOf, filters: { ...DEFAULT_FILTERS, have } }).map((x) => x.recipe.title);
+    expect(pick(['eggs', 'tomato'])).toEqual(['املت کامل']); // 2 of 2 main ingredients
+    expect(pick(['eggs'])).toEqual(['املت کامل']); // 1 of 2 = half is enough
+    expect(pick(['rice'])).toEqual(['کته']);
+    expect(pick(['salt', 'oil'])).toEqual([]); // staples alone never match
   });
   it('sorts by cost and speed', () => {
     expect(run({ sort: 'cost' })).toEqual(['املت گوجه', 'کته']);

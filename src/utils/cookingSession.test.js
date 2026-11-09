@@ -117,3 +117,42 @@ describe('normalizeSession (restoring saved data safely)', () => {
     expect(Object.keys(s.timers)).toEqual([]);
   });
 });
+
+import { summarizeSession, progressStatus, isStale, SESSION_FRESH_MS } from './cookingSession.js';
+
+describe('resuming (summarizeSession, progressStatus, staleness)', () => {
+  const base = { slug: 'demo', stepIndex: 2, completed: ['s1', 's2'], timers: {}, finished: false, updatedAt: T0 };
+  it('summarizes sessions that have progress', () => {
+    expect(summarizeSession(base, T0 + 1000)).toEqual({ slug: 'demo', stepIndex: 2, completed: 2, updatedAt: T0 });
+  });
+  it('returns null when there is nothing to resume', () => {
+    expect(summarizeSession({ ...base, stepIndex: 0, completed: [] }, T0)).toBe(null);
+    expect(summarizeSession({ ...base, finished: true }, T0)).toBe(null);
+    expect(summarizeSession(null, T0)).toBe(null);
+    expect(summarizeSession('junk', T0)).toBe(null);
+    expect(summarizeSession({ stepIndex: 2 }, T0)).toBe(null);
+  });
+  it('counts a started timer as progress even on step one', () => {
+    const withTimer = { ...base, stepIndex: 0, completed: [], timers: { s1: { status: 'running' } } };
+    expect(summarizeSession(withTimer, T0) !== null).toBe(true);
+  });
+  it('ignores sessions older than the freshness window', () => {
+    expect(summarizeSession(base, T0 + SESSION_FRESH_MS + 1)).toBe(null);
+    expect(summarizeSession(base, T0 + SESSION_FRESH_MS - 1) !== null).toBe(true);
+  });
+  it('tolerates broken fields', () => {
+    expect(summarizeSession({ slug: 'demo', stepIndex: -4, completed: 'x', timers: 5, updatedAt: 'now' }, T0)).toBe(null);
+  });
+  it('reports progress status', () => {
+    const fresh = { ...fresh0(), updatedAt: T0 };
+    expect(progressStatus(null, T0)).toBe('none');
+    expect(progressStatus(fresh, T0)).toBe('none'); // nothing done yet
+    const moved = act(fresh, { type: 'next' });
+    expect(progressStatus(moved, T0)).toBe('in-progress');
+    const finished = act(act(act(fresh, { type: 'complete', stepId: 's1' }), { type: 'complete', stepId: 's2' }), { type: 'complete', stepId: 's3' });
+    expect(progressStatus(finished, T0)).toBe('finished');
+    expect(progressStatus(moved, T0 + SESSION_FRESH_MS + 5)).toBe('none');
+    expect(isStale(moved, T0 + SESSION_FRESH_MS + 5)).toBe(true);
+  });
+});
+function fresh0() { return createSession({ slug: 'demo', servings: 2, now: T0 }); }

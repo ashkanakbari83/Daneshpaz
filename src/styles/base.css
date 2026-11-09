@@ -31,7 +31,7 @@ h3,
 h4 {
   margin: 0;
   line-height: var(--leading-tight);
-  font-weight: var(--weight-black);
+  font-weight: var(--weight-bold);
   color: var(--color-primary);
 }
 
@@ -87,12 +87,24 @@ ol {
 }
 
 .page {
-  padding-block: var(--space-6) var(--space-10);
+  padding-block: var(--space-4) var(--space-8);
 }
 
 .page-title {
   font-size: var(--text-2xl);
-  margin-block-end: var(--space-5);
+  margin-block-end: var(--space-3);
+}
+
+@media (min-width: 768px) {
+  :root {
+    --section-gap: 2rem;
+  }
+  .page {
+    padding-block: var(--space-6) var(--space-10);
+  }
+  .page-title {
+    margin-block-end: var(--space-4);
+  }
 }
 
 .visually-hidden {

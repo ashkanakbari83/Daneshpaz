@@ -7,7 +7,7 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className="container">
         <div className={styles.row}>
-          <LogoMark size={28} />
+          <LogoMark size={22} />
           <p className={styles.slogan}>آشپزی کن، حتی اگه بلد نیستی!</p>
         </div>
         <Link to="/admin/login" className={styles.link}>ورود مدیر</Link>

@@ -1,10 +1,10 @@
 .group { margin: 0; padding: 0; border: 0; min-width: 0; }
-.legend { padding: 0; margin-block-end: var(--space-2); font-weight: var(--weight-bold); }
+.legend { padding: 0; margin-block-end: var(--space-2); font-weight: var(--weight-medium); font-size: var(--text-sm); }
 .options { display: flex; flex-wrap: wrap; gap: var(--space-2); }
 .pill {
-  min-height: 2.75rem;
-  padding-inline: var(--space-4);
-  border: 2px solid var(--color-border-strong);
+  min-height: var(--control-h-sm);
+  padding-inline: var(--space-3);
+  border: 1.5px solid var(--color-border-strong);
   border-radius: var(--radius-pill);
   background: var(--color-surface);
   font-size: var(--text-sm);

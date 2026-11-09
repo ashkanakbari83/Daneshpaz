@@ -26,7 +26,7 @@ export default function Header() {
 
         <div className={styles.actions}>
           <Link to="/search" className={cx(styles.iconButton, styles.mobileOnly)} aria-label="جست‌وجوی غذا">
-            <Search size={22} aria-hidden="true" />
+            <Search size={20} aria-hidden="true" />
           </Link>
           <button
             type="button"
@@ -35,7 +35,7 @@ export default function Header() {
             aria-label="باز کردن منو"
             aria-haspopup="dialog"
           >
-            <Menu size={22} aria-hidden="true" />
+            <Menu size={20} aria-hidden="true" />
           </button>
         </div>
       </div>

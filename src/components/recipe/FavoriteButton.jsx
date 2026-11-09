@@ -22,7 +22,7 @@ export default function FavoriteButton({ slug, title, className }) {
       aria-label={active ? `حذف «${title}» از علاقه‌مندی‌ها` : `افزودن «${title}» به علاقه‌مندی‌ها`}
       onClick={handleClick}
     >
-      <Heart size={22} aria-hidden="true" fill={active ? 'currentColor' : 'none'} />
+      <Heart size={20} aria-hidden="true" fill={active ? 'currentColor' : 'none'} />
     </button>
   );
 }

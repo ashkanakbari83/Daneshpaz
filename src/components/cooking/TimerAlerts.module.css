@@ -1,6 +1,6 @@
-.wrap { display: flex; flex-direction: column; gap: var(--space-3); }
-.done { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2) var(--space-3); padding: var(--space-3) var(--space-4); border-radius: var(--radius-lg); background: var(--color-accent); color: var(--color-text); }
-.text { flex: 1; min-width: 10rem; font-weight: var(--weight-black); line-height: 1.6; }
+.wrap { display: flex; flex-direction: column; gap: var(--space-2); }
+.done { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-1) var(--space-2); padding: var(--space-2) var(--space-3); border-radius: var(--radius-lg); background: var(--color-accent); color: var(--color-text); }
+.text { flex: 1; min-width: 9rem; font-weight: var(--weight-bold); line-height: 1.6; }
 .chips { display: flex; flex-wrap: wrap; gap: var(--space-2); }
-.chip { display: inline-flex; align-items: center; gap: var(--space-2); min-height: 2.75rem; padding-inline: var(--space-3); border: 1px solid var(--color-border-strong); border-radius: var(--radius-pill); background: var(--color-surface); font-size: var(--text-sm); }
+.chip { display: inline-flex; align-items: center; gap: var(--space-2); min-height: var(--control-h-sm); padding-inline: var(--space-3); border: 1px solid var(--color-border-strong); border-radius: var(--radius-pill); background: var(--color-surface); font-size: var(--text-sm); }
 .chip strong { font-variant-numeric: tabular-nums; direction: ltr; color: var(--color-primary); }

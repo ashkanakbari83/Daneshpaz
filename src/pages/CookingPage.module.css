@@ -2,16 +2,16 @@
 .main {
   display: flex;
   flex-direction: column;
-  gap: var(--space-5);
+  gap: var(--space-4);
   width: 100%;
-  max-width: 44rem;
+  max-width: var(--reading-max);
   margin-inline: auto;
-  padding: var(--space-5) var(--gutter) calc(10.5rem + var(--safe-bottom));
+  padding: var(--space-4) var(--gutter) calc(8rem + var(--safe-bottom));
 }
-.muted { color: var(--color-text-muted); }
-.sheetList { display: flex; flex-direction: column; gap: var(--space-4); }
-.sheetList li { display: flex; gap: var(--space-3); line-height: 1.9; }
-.sheetList svg { flex: none; margin-block-start: 0.4rem; color: var(--color-accent-text); }
-.sheetLinks { display: flex; flex-direction: column; gap: var(--space-2); margin-block-start: var(--space-3); }
-.sheetLink { display: flex; align-items: center; gap: var(--space-2); min-height: var(--tap-min); padding-inline: var(--space-4); border: 1px solid var(--color-border); border-radius: var(--radius-md); font-weight: var(--weight-medium); color: var(--color-primary); }
+.muted { color: var(--color-text-muted); font-size: var(--text-sm); }
+.sheetList { display: flex; flex-direction: column; gap: var(--space-3); }
+.sheetList li { display: flex; gap: var(--space-2); line-height: 1.8; }
+.sheetList svg { flex: none; margin-block-start: 0.3rem; color: var(--color-accent-text); }
+.sheetLinks { display: flex; flex-direction: column; gap: var(--space-1); margin-block-start: var(--space-2); }
+.sheetLink { display: flex; align-items: center; gap: var(--space-2); min-height: var(--control-h); padding-inline: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-md); font-size: var(--text-sm); font-weight: var(--weight-medium); color: var(--color-primary); }
 .sheetLink:hover { background: var(--color-primary-soft); }

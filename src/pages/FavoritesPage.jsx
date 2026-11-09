@@ -31,7 +31,7 @@ export default function FavoritesPage() {
     <div className="container page">
       <h1 className="page-title">علاقه‌مندی‌ها</h1>
       <p className={styles.note}>
-        <Info size={18} aria-hidden="true" />
+        <Info size={16} aria-hidden="true" />
         <span>بدون نیاز به ثبت‌نام، علاقه‌مندی‌ها فقط در همین مرورگر ذخیره می‌شوند و روی دستگاه یا مرورگر دیگر دیده نمی‌شوند.</span>
       </p>
       {catalog.status === 'loading' && <RecipeGridSkeleton count={2} />}

@@ -1,15 +1,14 @@
-.field { display: flex; flex-direction: column; gap: var(--space-2); }
-.label { font-weight: var(--weight-bold); font-size: var(--text-sm); }
+.field { display: flex; flex-direction: column; gap: var(--space-1); }
+.label { font-weight: var(--weight-medium); font-size: var(--text-sm); }
 .control { position: relative; }
 .select {
   appearance: none;
   width: 100%;
-  min-height: var(--tap-min);
-  padding-inline: var(--space-4) var(--space-8);
-  border: 2px solid var(--color-border-strong);
+  min-height: var(--control-h-sm);
+  padding-inline: var(--space-3) var(--space-8);
+  border: 1.5px solid var(--color-border-strong);
   border-radius: var(--radius-md);
   background: var(--color-surface);
-  font-size: 1rem;
+  font-size: var(--text-base);
 }
-.select:focus-visible { outline-offset: 2px; }
-.chevron { position: absolute; inset-inline-end: var(--space-3); inset-block-start: 50%; transform: translateY(-50%); pointer-events: none; color: var(--color-text-muted); }
+.chevron { position: absolute; inset-inline-end: var(--space-2); inset-block-start: 50%; transform: translateY(-50%); pointer-events: none; color: var(--color-text-muted); }

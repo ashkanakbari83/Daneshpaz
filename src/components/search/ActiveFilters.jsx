@@ -10,7 +10,7 @@ export default function ActiveFilters({ chips, onRemove, onClear }) {
         <li key={`${chip.key}-${chip.value ?? ''}`}>
           <button type="button" className={styles.chip} onClick={() => onRemove(chip)} aria-label={`حذف فیلتر ${chip.label}`}>
             <span>{chip.label}</span>
-            <X size={16} aria-hidden="true" />
+            <X size={14} aria-hidden="true" />
           </button>
         </li>
       ))}

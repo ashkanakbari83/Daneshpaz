@@ -1,3 +1,4 @@
-.grid { display: grid; grid-template-columns: 1fr; gap: var(--space-4); }
-@media (min-width: 600px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (min-width: 1024px) { .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-5); } }
+.grid { display: grid; grid-template-columns: 1fr; gap: var(--space-2); }
+/* Auto-fit columns: 2 on tablets, up to 4 on wide screens, so 4 or 8 recipes never leave an orphan row. */
+@media (min-width: 600px) { .grid { grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); gap: var(--space-3); } }
+@media (min-width: 1024px) { .grid { gap: var(--space-4); } }

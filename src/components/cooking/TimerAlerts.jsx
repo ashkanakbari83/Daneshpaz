@@ -20,7 +20,7 @@ export default function TimerAlerts({ session, steps, currentStepId, now, onGoto
     <div className={styles.wrap}>
       {done.map(([id]) => (
         <div key={id} className={styles.done} role="alert">
-          <BellRing size={24} aria-hidden="true" />
+          <BellRing size={20} aria-hidden="true" />
           <p className={styles.text}>تایمر «{titleOf(id)}» تمام شد!</p>
           <Button size="sm" variant="secondary" onClick={() => { onAck(id); onGoto(indexOf(id)); }}>رفتن به مرحله</Button>
           <Button size="sm" variant="ghost" onClick={() => onAck(id)}>باشه</Button>
@@ -31,7 +31,7 @@ export default function TimerAlerts({ session, steps, currentStepId, now, onGoto
           {others.map(([id, t]) => (
             <li key={id}>
               <button type="button" className={styles.chip} onClick={() => onGoto(indexOf(id))}>
-                <Timer size={16} aria-hidden="true" />
+                <Timer size={14} aria-hidden="true" />
                 <span>{titleOf(id)}</span>
                 <strong>{formatClock(Math.ceil(getRemainingMs(t, now) / 1000))}</strong>
               </button>

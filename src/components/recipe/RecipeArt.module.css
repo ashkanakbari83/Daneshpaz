@@ -11,11 +11,12 @@
 .terracotta { background: linear-gradient(135deg, var(--color-terracotta-soft), #f1c4b6); color: var(--color-danger); }
 .tag {
   position: absolute;
-  inset-block-end: var(--space-2);
-  inset-inline-start: var(--space-2);
+  inset-block-end: var(--space-1);
+  inset-inline-start: var(--space-1);
   padding: 0 var(--space-2);
   border-radius: var(--radius-pill);
   background: rgba(255, 255, 255, 0.8);
   color: var(--color-text-muted);
-  font-size: var(--text-xs);
+  font-size: 0.6875rem;
+  line-height: 1.6;
 }

@@ -70,7 +70,7 @@ export default function HelpPage() {
                     <span className={styles.itemSummary}>{a.summary}</span>
                     <Badge tone="primary">{categoryTitle(a.category)}</Badge>
                   </span>
-                  <ChevronLeft size={20} aria-hidden="true" className={styles.chevron} />
+                  <ChevronLeft size={18} aria-hidden="true" className={styles.chevron} />
                 </Link>
               </li>
             ))}

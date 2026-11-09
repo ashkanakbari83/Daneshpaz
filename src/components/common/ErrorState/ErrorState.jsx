@@ -12,7 +12,7 @@ export default function ErrorState({
   return (
     <div className={styles.error} role="alert">
       <span className={styles.badge} aria-hidden="true">
-        <AlertTriangle size={32} />
+        <AlertTriangle size={26} />
       </span>
       <h2 className={styles.title}>{title}</h2>
       <p className={styles.message}>{message}</p>

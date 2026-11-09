@@ -12,7 +12,7 @@ export default function BottomNav() {
           <li key={to} className={styles.cell}>
             <NavLink to={to} end={end} className={({ isActive }) => cx(styles.item, isActive && styles.active)}>
               <span className={styles.iconWrap}>
-                <Icon size={22} aria-hidden="true" />
+                <Icon size={20} aria-hidden="true" />
               </span>
               <span className={styles.label}>{label}</span>
             </NavLink>

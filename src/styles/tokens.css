@@ -33,21 +33,21 @@
   --color-focus: var(--color-primary);
   --color-overlay: rgba(25, 36, 30, 0.55);
 
-  /* Typography */
+  /* Typography. Phase 5: compact scale (body 15px). Sizes, not weights, carry hierarchy. */
   --font-sans: 'Vazirmatn Variable', 'Vazirmatn', system-ui, Tahoma, sans-serif;
   --weight-regular: 400;
   --weight-medium: 500;
   --weight-bold: 700;
-  --weight-black: 800;
-  --text-xs: 0.8125rem;
-  --text-sm: 0.9375rem;
-  --text-base: 1.0625rem; /* Persian reads best slightly larger than Latin 16px */
-  --text-lg: 1.25rem;
-  --text-xl: clamp(1.375rem, 1.2rem + 0.9vw, 1.75rem);
-  --text-2xl: clamp(1.75rem, 1.4rem + 1.8vw, 2.5rem);
-  --text-hero: clamp(2.125rem, 1.6rem + 3.2vw, 3.75rem);
-  --leading-tight: 1.45;
-  --leading-body: 1.85;
+  --weight-black: 800; /* numbers and brand only; headings use bold */
+  --text-xs: 0.75rem; /* 12px: metadata, badges */
+  --text-sm: 0.8125rem; /* 13px: secondary text, hints */
+  --text-base: 0.9375rem; /* 15px: body */
+  --text-lg: 1.0625rem; /* 17px: card titles, small headings */
+  --text-xl: clamp(1.0625rem, 1rem + 0.4vw, 1.25rem); /* section headings */
+  --text-2xl: clamp(1.25rem, 1.1rem + 0.8vw, 1.625rem); /* page titles */
+  --text-hero: clamp(1.5rem, 1.25rem + 1.4vw, 2.125rem); /* home hero only */
+  --leading-tight: 1.4;
+  --leading-body: 1.75;
 
   /* Spacing (4px base) */
   --space-1: 0.25rem;
@@ -61,26 +61,38 @@
   --space-12: 3rem;
   --space-16: 4rem;
 
-  /* Shape — radius follows hierarchy: controls < cards < hero/sheets */
-  --radius-sm: 0.5rem;
-  --radius-md: 0.875rem;
-  --radius-lg: 1.375rem;
-  --radius-xl: 2rem;
+  /* Shape: radius follows hierarchy: controls < cards < hero/sheets */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.625rem;
+  --radius-lg: 0.875rem;
+  --radius-xl: 1.25rem;
   --radius-pill: 999px;
 
-  /* Elevation: green-tinted, not neutral grey */
-  --shadow-sm: 0 1px 2px rgba(41, 77, 60, 0.08);
-  --shadow-md: 0 8px 20px -8px rgba(41, 77, 60, 0.22);
-  --shadow-lg: 0 24px 48px -16px rgba(41, 77, 60, 0.32);
+  /* Elevation: light, green-tinted */
+  --shadow-sm: 0 1px 2px rgba(41, 77, 60, 0.06);
+  --shadow-md: 0 4px 12px -6px rgba(41, 77, 60, 0.22);
+  --shadow-lg: 0 16px 32px -12px rgba(41, 77, 60, 0.3);
 
   /* Layout */
-  --container-max: 72rem;
-  --gutter: clamp(1rem, 4vw, 2rem);
-  --header-h: 3.75rem;
-  --bottom-nav-h: 4.25rem;
-  --tap-min: 3rem; /* 48px minimum touch target */
+  --container-max: 70rem;
+  --reading-max: 46rem; /* long-form text: help articles, cooking steps */
+  --gutter: clamp(0.875rem, 3.5vw, 1.5rem);
+  --section-gap: 1.5rem; /* between page sections (mobile); 2rem from 768px */
+  --header-h: 3.25rem;
+  --bottom-nav-h: 3.5rem;
   --safe-top: env(safe-area-inset-top, 0px);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
+
+  /* Component dimensions (shared by Button, Input, Select, pills) */
+  --control-h-sm: 2.25rem; /* 36px: secondary / dense */
+  --control-h: 2.75rem; /* 44px: default touch target */
+  --control-h-lg: 3rem; /* 48px: the one primary action on a screen */
+  --tap-min: 2.75rem;
+  --card-pad: 0.75rem;
+  --card-pad-lg: 1rem;
+  --icon-sm: 1rem;
+  --icon-md: 1.25rem;
+  --icon-lg: 1.5rem;
 
   /* Motion */
   --ease: cubic-bezier(0.2, 0.7, 0.2, 1);

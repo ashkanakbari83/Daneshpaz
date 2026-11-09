@@ -2,8 +2,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: var(--tap-min);
-  height: var(--tap-min);
+  width: 2.5rem;
+  height: 2.5rem;
   border: 0;
   border-radius: var(--radius-pill);
   background: rgba(255, 255, 255, 0.92);

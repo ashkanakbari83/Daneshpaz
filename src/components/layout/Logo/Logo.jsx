@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import styles from './Logo.module.css';
 
-export function LogoMark({ size = 34 }) {
+export function LogoMark({ size = 28 }) {
   return (
     <svg width={size} height={size} viewBox="0 0 48 48" fill="none" aria-hidden="true">
       <path

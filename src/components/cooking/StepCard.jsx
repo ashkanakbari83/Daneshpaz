@@ -52,7 +52,7 @@ export default function StepCard({ step, number, ingredients, completed }) {
 
       {step.warnings.length > 0 && (
         <section className={styles.warning} aria-labelledby="step-warn">
-          <h2 id="step-warn" className={styles.warnTitle}><AlertTriangle size={20} aria-hidden="true" /> حواست باشه</h2>
+          <h2 id="step-warn" className={styles.warnTitle}><AlertTriangle size={18} aria-hidden="true" /> حواست باشه</h2>
           <ul className={styles.list}>{step.warnings.map((w) => <li key={w}>{w}</li>)}</ul>
         </section>
       )}
@@ -62,7 +62,7 @@ export default function StepCard({ step, number, ingredients, completed }) {
         <ul className={styles.cueList}>
           {step.doneCues.map((cue) => (
             <li key={cue} className={styles.cue}>
-              <CheckCircle2 size={22} aria-hidden="true" />
+              <CheckCircle2 size={18} aria-hidden="true" />
               <span>{cue}</span>
             </li>
           ))}

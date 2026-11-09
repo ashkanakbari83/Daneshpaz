@@ -9,3 +9,4 @@ export { default as EmptyState } from './EmptyState/EmptyState';
 export { default as ErrorState } from './ErrorState/ErrorState';
 export { default as Select } from './Select/Select';
 export { default as OptionGroup } from './OptionGroup/OptionGroup';
+export { default as Disclosure } from './Disclosure/Disclosure';

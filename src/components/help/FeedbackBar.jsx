@@ -6,7 +6,7 @@ import { createLocalStore } from '@/store/localStore';
 import { isApiMode, sendFeedback } from '@/services/contentService';
 import styles from './FeedbackBar.module.css';
 
-const feedbackStore = createLocalStore('daneshpaz:feedback', []);
+const feedbackStore = createLocalStore('daneshpaz:feedback', [], Array.isArray);
 
 /** Feedback is saved in this browser and, in API mode, also sent to the server for admins to review. */
 export default function FeedbackBar({ slug }) {

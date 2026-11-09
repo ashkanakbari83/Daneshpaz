@@ -137,11 +137,13 @@ shared across recipes), `daneshpaz:feedback` (help feedback; reaching admins com
 | Body text | 17 px | 15 px (`--text-base`); metadata 12–13 px |
 | Page title / section heading | up to 40 px / 28 px | 20–26 px / 17–20 px (headings are bold, not extra-bold) |
 | Default control height (buttons, inputs) | 48 px | 44 px (`--control-h`); dense controls 36 px; one primary action per screen 48 px |
-| Header / bottom navigation | 60 px / 68 px | 52 px / 56 px |
+| Header / bottom navigation (measured, incl. border) | 61 px / 69 px | 53 px / 57 px |
 | Radii, shadows | large | smaller radii, lighter shadows |
 | Page rhythm | 40 px between sections | 24 px (32 px from 768 px) via `--section-gap` |
 
-Measured at 375 px: home page 3,771 → 1,404 px tall (−63%), search 4,537 → 1,459 px (−68%), help 2,134 → 1,489 px.
+Measured at 375 px (page height before → after): home 3,771 → 1,415 px (−62%), search 4,537 → 1,459 px (−68%),
+help 2,134 → 1,489 px (−30%), guided cooking step 1,099 → 809 px (−26%). The recipe page went 3,120 → 2,702 px (−13%)
+while gaining the steps and tips sections. Measured with a fallback font, so absolute heights will differ slightly with Vazirmatn.
 Recipe cards are compact list rows on phones (5 rem thumbnail) and a vertical auto-fit grid from 600 px.
 
 **Journey fixes and additions**

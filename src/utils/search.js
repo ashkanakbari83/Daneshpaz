@@ -39,6 +39,13 @@ export function scoreRecipe(recipe, tokens, { ingredientsById, categoriesBySlug 
   return score;
 }
 
+/**
+ * Basics nearly every kitchen has. They are assumed available when matching
+ * «با مواد موجود», so choosing eggs and tomatoes finds the omelet even though
+ * it also needs salt and oil. (They still appear in ingredient lists and costs.)
+ */
+export const PANTRY_STAPLES = new Set(['salt', 'oil', 'pepper', 'turmeric', 'sugar']);
+
 const requiredIngredients = (recipe) => recipe.ingredients.filter((i) => !i.optional);
 const totalTime = (recipe) => recipe.prepTime + recipe.cookTime;
 
@@ -72,14 +79,15 @@ export function searchRecipes({ recipes, ctx, filters, costOf }) {
       if (!needed.every((key) => filters.equip.includes(key))) continue;
     }
 
-    const haveCount = required.filter((i) => filters.have.includes(i.ingredientId)).length;
-    const haveRatio = required.length ? haveCount / required.length : 0;
+    const core = required.filter((i) => !PANTRY_STAPLES.has(i.ingredientId));
+    const haveCount = core.filter((i) => filters.have.includes(i.ingredientId)).length;
+    const haveRatio = core.length ? haveCount / core.length : 1;
     if (filters.have.length && haveRatio < 0.5) continue;
 
     const cost = costOf(recipe);
     if (filters.cost && (cost === null || cost > filters.cost)) continue;
 
-    results.push({ recipe, cost, score, haveRatio, missingCount: required.length - haveCount });
+    results.push({ recipe, cost, score, haveRatio, missingCount: core.length - haveCount });
   }
 
   const byCost = (a, b) => (a.cost ?? Infinity) - (b.cost ?? Infinity);

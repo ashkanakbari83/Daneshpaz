@@ -1,13 +1,13 @@
-.field { display: flex; flex-direction: column; gap: var(--space-2); }
-.label { font-weight: var(--weight-bold); font-size: var(--text-sm); color: var(--color-text); }
+.field { display: flex; flex-direction: column; gap: var(--space-1); }
+.label { font-weight: var(--weight-medium); font-size: var(--text-sm); color: var(--color-text); }
 .control {
   display: flex;
   align-items: center;
   gap: var(--space-2);
-  min-height: var(--tap-min);
-  padding-inline: var(--space-4);
+  min-height: var(--control-h);
+  padding-inline: var(--space-3);
   background: var(--color-surface);
-  border: 2px solid var(--color-border-strong);
+  border: 1.5px solid var(--color-border-strong);
   border-radius: var(--radius-md);
   transition: border-color var(--dur-fast) var(--ease);
 }
@@ -17,12 +17,12 @@
 .input {
   flex: 1;
   min-width: 0;
-  min-height: calc(var(--tap-min) - 4px);
+  min-height: calc(var(--control-h) - 3px);
   padding: 0;
   border: 0;
   background: transparent;
   color: var(--color-text);
-  font-size: 1rem; /* 16px+ stops iOS Safari zooming on focus */
+  font-size: 1rem; /* 16px: prevents iOS Safari zooming on focus */
 }
 .input:focus-visible { outline: none; }
 .input::placeholder { color: var(--color-text-muted); opacity: 0.8; }

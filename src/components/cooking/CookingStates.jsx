@@ -9,7 +9,7 @@ export function PauseScreen({ onResume, onRestart }) {
   return (
     <div className={styles.overlay} role="dialog" aria-modal="true" aria-labelledby="pause-title">
       <div className={styles.box}>
-        <span className={styles.icon} aria-hidden="true"><PauseCircle size={40} /></span>
+        <span className={styles.icon} aria-hidden="true"><PauseCircle size={30} /></span>
         <h2 id="pause-title" className={styles.title}>آشپزی متوقف شد</h2>
         <p className={styles.text}>اگر چیزی روی حرارت است، اول اجاق را خاموش کن. تایمرهای فعال هم متوقف شده‌اند و با «ادامه» دوباره شروع می‌شوند.</p>
         <Button size="lg" fullWidth autoFocus iconStart={<Play size={20} aria-hidden="true" />} onClick={onResume}>ادامه</Button>
@@ -23,7 +23,7 @@ export function PauseScreen({ onResume, onRestart }) {
 export function FinishScreen({ recipe, completedCount, stepCount, onBack, onRestart }) {
   return (
     <div className={styles.finish}>
-      <span className={styles.icon} aria-hidden="true"><PartyPopper size={44} /></span>
+      <span className={styles.icon} aria-hidden="true"><PartyPopper size={32} /></span>
       <h1 className={styles.title}>آفرین! غذایت آماده است</h1>
       <p className={styles.text}>
         {formatNumber(completedCount)} مرحله از {formatNumber(stepCount)} مرحله‌ی «{recipe.title}» را انجام دادی.

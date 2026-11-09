@@ -6,9 +6,9 @@ Daneshpaz is a Persian (Farsi), RTL, mobile-first cooking assistant for students
 people living alone and beginner cooks. It helps users decide what to cook, see what
 it costs and what to buy, and follow the recipe step by step.
 
-**Status: Phase 5 (UX completion and compact, mobile-first UI) done.** Backend, database and hosting were not
-changed in this phase. The admin editing screens, PWA/offline work and the deployment-architecture decision (see the
-audit discussion) are still open.
+**Status: v0.6.0.** Phase 5 (compact, mobile-first UI and completed journeys) is done, and the site now tells returning
+visitors what changed after every update (see «What's new popup»). Backend, database and hosting were not changed;
+the deployment-architecture decision and the admin editing screens are still open.
 
 ## Technologies
 
@@ -128,6 +128,23 @@ Filters live in the URL, so results are shareable: `q, cat, meal, diff, cost, pr
 **Saved in this browser only (localStorage):** `daneshpaz:favorites`, `daneshpaz:pantry` (items ticked «دارم»,
 shared across recipes), `daneshpaz:feedback` (help feedback; reaching admins comes with the backend).
 
+## What's new popup («تازه‌های دانشپز»)
+
+After every update, the first time a **returning visitor** opens the site, a sheet lists what changed. It shows once per
+release, can be reopened with the **«تازه‌ها»** button in the footer, and never appears during guided cooking.
+
+**For every update you publish (this is the whole workflow):**
+1. Bump `"version"` in `package.json` (e.g. `0.6.0` → `0.7.0`).
+2. Add an entry at the **top** of `RELEASES` in `src/data/changelog.js` with the same number, a short title, and
+   plain Persian sentences typed `new` (جدید), `improved` (بهبود) or `fixed` (رفع اشکال).
+3. `npm test` fails if the newest changelog entry does not match `package.json`, so a release cannot go out without a note.
+
+**Rules** (`src/utils/releases.js`): the browser remembers the last seen version in `localStorage`
+(`daneshpaz:last-seen-release`). Someone behind by several versions sees every missed release (up to 3, newest first).
+A visitor who has never seen a note and already has saved data (favorites, cooking progress...) sees the newest one.
+A brand-new visitor sees nothing and is silently marked as up to date. A returning visitor who never saved anything is
+indistinguishable from a new one, so they also see nothing. To preview it, open any page with `?whatsnew=1`.
+
 ## Phase 5: UX completion and compact UI
 
 **Sizing is controlled by design tokens** (`src/styles/tokens.css`), so pages and components stay consistent:
@@ -236,7 +253,7 @@ Controls: مرحله قبل، مرحله بعد، انجام شد، توقف، �
 
 ## Tests
 
-Phase 5 added tests for stored-data validation, resume/staleness logic, step-note collection and pantry staples.
+The what's-new feature has tests for its decision rules, its storage and the changelog itself. Phase 5 added tests for stored-data validation, resume/staleness logic, step-note collection and pantry staples.
 
 `npm test` runs Vitest over `src/**/*.test.js`: Persian formatting, scaling, cost calculation,
 search/filters/URL params, the backend over real HTTP (auth, CSRF, roles, rate limits, validation, round-trip of demo data), the cooking timer and session reducer (pause/resume, restore, corrupt data),

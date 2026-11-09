@@ -2,6 +2,7 @@ import { Outlet, ScrollRestoration } from 'react-router-dom';
 import Header from '../Header/Header';
 import BottomNav from '../BottomNav/BottomNav';
 import Footer from '../Footer/Footer';
+import WhatsNew from '../WhatsNew/WhatsNew';
 import styles from './AppShell.module.css';
 
 /** Public layout: header, page content, footer and the fixed mobile bottom bar. */
@@ -15,6 +16,7 @@ export default function AppShell() {
       </main>
       <Footer />
       <BottomNav />
+      <WhatsNew />
       <ScrollRestoration />
     </div>
   );

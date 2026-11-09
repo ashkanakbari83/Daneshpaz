@@ -1,7 +1,7 @@
 {
   "name": "daneshpaz",
   "private": true,
-  "version": "0.5.0",
+  "version": "0.6.0",
   "type": "module",
   "description": "دانشپز — دستیار آشپزی فارسی برای دانشجوها، افراد مجرد و آشپزهای تازه‌کار",
   "scripts": {

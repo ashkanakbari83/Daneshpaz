@@ -260,13 +260,4 @@ search/filters/URL params, the backend over real HTTP (auth, CSRF, roles, rate l
 step ingredient scaling, and integrity tests for the demo data (valid references, every unit convertible,
 every step has completion cues, chicken cues keep the temperature check).
 
-## Roadmap
 
-1. Foundation (done)
-2. Public UI: home content, search and filters, recipe page, favorites, help center (done, demo data)
-3. Cooking engine: steps, timer, completion cues, saved progress (done, demo steps for 8 recipes)
-4. Backend and database, admin authentication (done; Node + SQLite, see above)
-5. UX completion and compact UI (done)
-6. Admin editing screens, media, and the deployment-architecture decision
-7. PWA and offline
-8. Testing, performance, accessibility, deployment

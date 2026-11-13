@@ -15,7 +15,8 @@ describe('demo data integrity', () => {
     expect(unique(RECIPES.map((r) => r.slug))).toBe(true);
     expect(unique(HELP_ARTICLES.map((a) => a.slug))).toBe(true);
   });
-  it('has 30 ingredients and 10 categories', () => {
+  it('has 20 recipes, 30 ingredients and 10 categories', () => {
+    expect(RECIPES.length).toBe(20);
     expect(INGREDIENTS.length).toBe(30);
     expect(CATEGORIES.length).toBe(10);
   });
@@ -76,5 +77,23 @@ describe('demo data integrity', () => {
     const cues = STEPS_BY_SLUG['chicken-potato-pan'].flatMap((st) => st.doneCues).join(' ');
     expect(cues.includes('۷۴')).toBe(true);
     expect(cues.includes('صورتی')).toBe(true);
+  });
+
+  it('puts every category except none to use: each category has at least one recipe', () => {
+    for (const c of CATEGORIES) expect(RECIPES.some((r) => r.categorySlugs.includes(c.slug))).toBe(true);
+  });
+  it('covers the equipment filter: some recipes need an oven, none need unknown equipment', () => {
+    const keys = ['pot', 'pan', 'knife', 'board', 'oven', 'mixer', 'spatula', 'strainer', 'grater'];
+    expect(RECIPES.some((r) => r.equipment.some((e) => e.key === 'oven' && e.required))).toBe(true);
+    for (const r of RECIPES) for (const e of r.equipment) expect(keys.includes(e.key)).toBe(true);
+  });
+  it('keeps food-safety warnings on every recipe that cooks raw chicken or eggs', () => {
+    for (const r of RECIPES) {
+      const steps = STEPS_BY_SLUG[r.slug];
+      const has = (id) => r.ingredients.some((i) => i.ingredientId === id && !i.optional);
+      const text = steps.flatMap((st) => [...st.warnings, ...st.doneCues]).join(' ');
+      if (has('chicken')) expect(text.includes('۷۴') && text.includes('صورتی')).toBe(true);
+      if (has('eggs') && r.cookTime > 0) expect(text.includes('تخم‌مرغ')).toBe(true);
+    }
   });
 });

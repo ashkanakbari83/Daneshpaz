@@ -3,6 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { Menu, Search, ChevronLeft, LogIn } from 'lucide-react';
 import Logo from '../Logo/Logo';
 import BottomSheet from '@/components/common/BottomSheet/BottomSheet';
+import InstallButton from '../InstallButton/InstallButton';
 import { PRIMARY_NAV } from '@/constants/navigation';
 import { cx } from '@/utils/classNames';
 import styles from './Header.module.css';
@@ -51,6 +52,9 @@ export default function Header() {
               </NavLink>
             </li>
           ))}
+          <li>
+            <InstallButton className={styles.menuItem} iconSize={22}>نصب برنامه روی گوشی</InstallButton>
+          </li>
           <li>
             <Link to="/admin/login" onClick={closeMenu} className={styles.menuItem}>
               <LogIn size={22} aria-hidden="true" />

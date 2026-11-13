@@ -1,0 +1,20 @@
+{
+  "name": "دانشپز — آشپزی کن، حتی اگه بلد نیستی!",
+  "short_name": "دانشپز",
+  "description": "دستیار آشپزی فارسی: غذای ساده و اقتصادی پیدا کن، مواد و هزینه‌اش را ببین و قدم‌به‌قدم بپز.",
+  "lang": "fa",
+  "dir": "rtl",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F8F5EF",
+  "theme_color": "#294D3C",
+  "categories": ["food", "lifestyle"],
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

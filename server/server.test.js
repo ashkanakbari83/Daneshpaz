@@ -99,7 +99,7 @@ describe('demo content round-trips through the database and the public API', () 
     expect(index.data.categories).toEqual(HELP_CATEGORIES);
     const detail = await api('/api/help/chicken-doneness');
     expect(detail.data.article).toEqual(HELP_ARTICLES.find((a) => a.slug === 'chicken-doneness'));
-    expect(detail.data.relatedRecipes.map((r) => r.slug)).toEqual(['chicken-potato-pan']);
+    expect(detail.data.relatedRecipes.map((r) => r.slug)).toEqual(HELP_ARTICLES.find((a) => a.slug === 'chicken-doneness').relatedRecipes);
   });
   it('unknown recipe or help slug is a 404 in Persian', async () => {
     const r = await api('/api/recipes/nope');

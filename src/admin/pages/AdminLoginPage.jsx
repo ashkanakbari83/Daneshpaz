@@ -7,6 +7,7 @@ import Logo from '@/components/layout/Logo/Logo';
 import { useAuth } from '@/admin/auth/AuthContext';
 import { isApiMode } from '@/services/contentService';
 import { usePageTitle } from '@/hooks/usePageTitle';
+import { useOnlineStatus } from '@/hooks/useOnlineStatus';
 import styles from './AdminLoginPage.module.css';
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -14,6 +15,7 @@ const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 export default function AdminLoginPage() {
   usePageTitle('ورود مدیر');
   const { status, login } = useAuth();
+  const online = useOnlineStatus();
   const navigate = useNavigate();
   const location = useLocation();
   const [values, setValues] = useState({ email: '', password: '' });
@@ -80,8 +82,9 @@ export default function AdminLoginPage() {
               onChange={(e) => setValues({ ...values, password: e.target.value })}
               error={errors.password}
             />
+            {!online && <p className={styles.formError} role="alert">برای ورود مدیر باید به اینترنت وصل باشی.</p>}
             {formError && <p className={styles.formError} role="alert">{formError}</p>}
-            <Button type="submit" size="lg" fullWidth loading={submitting} iconStart={<LogIn size={20} aria-hidden="true" />}>ورود</Button>
+            <Button type="submit" size="lg" fullWidth loading={submitting} disabled={!online} iconStart={<LogIn size={20} aria-hidden="true" />}>ورود</Button>
           </form>
         )}
         <Link to="/" className={styles.back}>بازگشت به سایت</Link>

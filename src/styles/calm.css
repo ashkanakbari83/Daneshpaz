@@ -1,0 +1,18 @@
+/* Last layer: calm finishing touches. Keep it small. */
+@media (max-width: 360px) {
+  :root { --fs-md: 14px; --fs-xl: 19px; --fs-step: 18px; }
+  .page { padding-inline: var(--sp-3); }
+  .tile { width: 46px; height: 46px; font-size: 24px; }
+  .rcard-main { gap: var(--sp-2); }
+  .cost .v { font-size: var(--fs-md); }
+  .chip { padding: 0 10px; }
+}
+
+@media (min-width: 700px) {
+  .app { border-inline: 1px solid var(--line); }
+  .page { padding-inline: var(--sp-5); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
